@@ -1,44 +1,16 @@
 import http, {IncomingMessage, ServerResponse} from 'http'
 import 'dotenv/config'
-import {getRequest} from "./methods/get";
-import {postRequest} from "./methods/post";
-import {putRequest} from "./methods/put";
-import {deleteRequest} from "./methods/delete";
-import {IUser, RequestError} from "./models/models";
-import {handleError} from "./util/handleError";
-// import os from "os";
-// import cluster from "cluster";
-//
-// const number = os.availableParallelism()
+import {getRequest} from './methods/get'
+import {postRequest} from './methods/post'
+import {putRequest} from './methods/put'
+import {deleteRequest} from './methods/delete'
+import {IUser, RequestError} from './models/models'
+import {handleError} from './util/handleError'
 
 const PORT = process.env.PORT || 3001
-
-// const store: Array<IUser> = [
-//     {
-//         id: 'e36cb0ff-bf59-4cc8-bad4-9e97c5ce0566',
-//         age: 12,
-//         username: 'Vasil',
-//         hobbies: [ 'asd' ]
-//     },
-//     {
-//         id: '48938fc8-7427-4fb7-a2a1-e5cdf9052c78',
-//         age: 4,
-//         username: 'andrei',
-//         hobbies: [ 'asd' ]
-//     },
-//     {
-//         id: '3803f826-46af-40c0-8df0-957d6143a11c',
-//         age: 23,
-//         username: 'Jury',
-//         hobbies: [ 'asd' ]
-//     }
-// ]
-
 const store: Array<IUser> = []
 
-
 const server = http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
-
     try {
         switch (req.method) {
             case 'GET':

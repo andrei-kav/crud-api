@@ -11,7 +11,6 @@ export const deleteRequest = async (req: IncomingMessage, res: ServerResponse, s
         handleResponse(res, 400, 'User ID is not provided')
     } else {
         const user = deleteUser(uuid, store)
-        console.log('deleted user', user)
         const message = `User is removed: ${JSON.stringify(user)}`
         handleResponse(res, 204, message)
     }

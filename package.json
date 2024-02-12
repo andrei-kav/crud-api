@@ -4,16 +4,21 @@
   "description": "simple crud api",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start:dev": "nodemon ./src/index.ts",
+    "start:prod": "npm run build && node ./dist/index.js",
+    "build": "tsc"
   },
   "author": "andrei",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "@types/uuid": "^9.0.8",
     "nodemon": "^3.0.3",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "dotenv": "^16.4.2"
+    "dotenv": "^16.4.2",
+    "uuid": "^9.0.1"
   }
 }
